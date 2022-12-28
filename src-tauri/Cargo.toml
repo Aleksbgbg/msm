@@ -15,11 +15,13 @@ rust-version = "1.59"
 tauri-build = { version = "1.2.1", features = [] }
 
 [dependencies]
-serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2.1", features = [] }
-reqwest = { version = "0.11", features = ["json"] }
+serde_json = "1.0"
+tauri = { version = "1.2.1", features = ["dialog-open", "shell-open"] }
+reqwest = { version = "0.11.13", features = ["blocking", "json", "gzip"] }
 tokio = { version = "1", features = ["full"] }
+regex = "1.7.0"
+chrono = "0.4.23"
 
 [features]
 # by default Tauri runs in production mode

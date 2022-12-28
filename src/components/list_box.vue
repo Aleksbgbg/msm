@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const props = defineProps(["items"]);
+const props = defineProps<{
+  items: any[];
+}>();
 </script>
 
 <template lang="pug">
