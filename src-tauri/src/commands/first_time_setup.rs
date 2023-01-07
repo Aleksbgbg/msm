@@ -1,6 +1,6 @@
 use tauri::State;
 
-use crate::types::app_data::AppData;
+use crate::types::program_data::ProgramData;
 
 #[derive(serde::Serialize, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -10,7 +10,7 @@ pub struct FirstTimeSetup {
 }
 
 #[tauri::command]
-pub fn requires_first_time_setup(app_data: State<AppData>) -> FirstTimeSetup {
+pub fn requires_first_time_setup(app_data: State<ProgramData>) -> FirstTimeSetup {
   FirstTimeSetup {
     required: true,  // completed_first_time_setup(&app_data.settings),
     has_java: false, // env::var("PATH").unwrap().contains("Java"),
